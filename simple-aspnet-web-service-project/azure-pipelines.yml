@@ -7,7 +7,7 @@ trigger: 'none'
 
 pool:
   name: 'windows-pool'
-  demands: MsBuild
+  demands: MSBuild
 
 variables:
   buildPlatform: 'Any CPU'
