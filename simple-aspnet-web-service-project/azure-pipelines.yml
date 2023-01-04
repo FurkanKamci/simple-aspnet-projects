@@ -7,6 +7,7 @@ trigger: 'none'
 
 pool:
   name: 'windows-pool'
+  demands: MsBuild
 
 variables:
   buildPlatform: 'Any CPU'
@@ -24,6 +25,8 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
+    #msbuildPath: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe'
+    msbuildPath: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
