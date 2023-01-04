@@ -10,9 +10,10 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/simple-aspnet-webapi-core-project.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  solution: '**/simple-aspnet-projects.sln'
+  project: '**/simple-aspnet-webapi-core-project.sln'
 
 steps:
 - task: NuGetToolInstaller@1
