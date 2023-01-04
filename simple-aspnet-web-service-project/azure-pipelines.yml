@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: 'simple-aspnet-webapi-core-project/*.sln'
+  solution: '**/simple-aspnet-webapi-core-project.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
