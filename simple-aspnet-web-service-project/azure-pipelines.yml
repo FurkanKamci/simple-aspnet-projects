@@ -6,11 +6,11 @@
 trigger: 'none'
 
 pool:
-  name: 'windows-pool'
-  demands: 
-    - MSBuild
-    - Agent.Name -equals 'winsvr2019'
-    - Agent.Version -equals 2.213.2
+  name: 'ubuntu-latest'
+  # demands: 
+  #   - MSBuild
+  #   - Agent.Name -equals 'winsvr2019'
+  #   - Agent.Version -equals 2.213.2
 
 variables:
   buildPlatform: 'Any CPU'
@@ -29,7 +29,7 @@ steps:
   inputs:
     solution: '$(solution)'
     #msbuildPath: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe'
-    msbuildPath: 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe'
+    #msbuildPath: 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
