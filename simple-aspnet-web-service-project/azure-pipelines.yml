@@ -9,6 +9,7 @@ pool:
   name: 'windows-pool'
   demands: 
     - MSBuild
+    - Agent.Name -equals 'winsvr2019'
     - Agent.Version -equals 2.213.2
 
 variables:
