@@ -13,7 +13,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solution: '**/simple-aspnet-projects.sln'
-  project: '**/simple-aspnet-webapi-core-project.sln'
+  project: '**/simple-aspnet-web-service-project.csproj'
 
 steps:
 - task: NuGetToolInstaller@1
