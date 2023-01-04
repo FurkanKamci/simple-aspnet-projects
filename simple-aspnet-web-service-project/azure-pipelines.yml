@@ -5,8 +5,8 @@
 
 trigger: 'none'
 
-pool:
-  name: 'ubuntu-latest'
+pool: 
+  vmImage: 'ubuntu-latest'
   # demands: 
   #   - MSBuild
   #   - Agent.Name -equals 'winsvr2019'
