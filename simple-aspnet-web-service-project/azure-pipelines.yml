@@ -42,7 +42,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)\$(Build.BuildNumber)'
+    PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 
 # - task: PublishBuildArtifacts@1
