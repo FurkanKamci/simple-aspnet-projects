@@ -30,7 +30,7 @@ steps:
     solution: '$(solution)'
     #msbuildPath: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe'
     #msbuildPath: 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)\simple-aspnet-web-form-project"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /t:simple-aspnet-web-service-project /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)\simple-aspnet-web-form-project"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
