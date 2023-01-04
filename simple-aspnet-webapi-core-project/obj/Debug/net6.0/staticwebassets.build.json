@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1FG2U+gBFmuBr+Y0mq7xBC2UiZBh0mihJtfHZz07iNY=",
+  "Source": "simple-aspnet-webapi-core-project",
+  "BasePath": "_content/simple-aspnet-webapi-core-project",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
