@@ -33,3 +33,17 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Artifact'
+#   inputs:
+#     PathtoPublish: '$(build.artifactstagingdirectory)'
+#     publishLocation: FilePath
+#     TargetPath: 'C:\Repo\FirstDotnetApp-Repo\$(Build.DefinitionName)\$(Build.BuildNumber)'
+#   condition: succeededOrFailed()
