@@ -16,7 +16,6 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solution: '**/simple-aspnet-projects.sln'
-  project: '**/simple-aspnet-web-service-project.csproj'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -28,29 +27,15 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    #msbuildPath: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe'
-    #msbuildPath: 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /t:simple-aspnet-web-service-project /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)\simple-aspnet-web-form-project"'
+    #project: '**/simple-aspnet-web-service-project.csproj'
+
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /t:simple-aspnet-web-service-project /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# - task: VSTest@2
-#   inputs:
-#     platform: '$(buildPlatform)'
-#     configuration: '$(buildConfiguration)'
-
-# https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-build-artifacts-v1?view=azure-pipelines
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     ArtifactName: 'service-project-drop'
   condition: succeededOrFailed()
-
-# - task: PublishBuildArtifacts@1
-#   displayName: 'Publish Artifact'
-#   inputs:
-#     PathtoPublish: '$(build.artifactstagingdirectory)'
-#     publishLocation: FilePath
-#     TargetPath: 'C:\Repo\FirstDotnetApp-Repo\$(Build.DefinitionName)\$(Build.BuildNumber)'
-#   condition: succeededOrFailed()

@@ -1,0 +1,28 @@
+name: multijob_$(Date:yyyyMMdd)$(REV:r)
+
+trigger: 'none'
+
+jobs:
+
+ - job: ActivityOnWindows
+   pool: 
+     vmImage: 'windows-latest'
+   steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          
+          Write-Host "Hello World"
+
+ - job: ActivityOnLinux
+   pool: 
+     vmImage: 'ubuntu-latest'
+   steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+            
+          echo Hello world
