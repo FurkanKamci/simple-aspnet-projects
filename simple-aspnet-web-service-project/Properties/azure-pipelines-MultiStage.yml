@@ -43,8 +43,6 @@ stages:
   - job: Deploy
     pool:
       vmImage: 'windows-latest'
-    variables:
-      AZ-CON: '$(azure-connect)' 
     steps:
       - task: DownloadBuildArtifacts@1
         inputs:
